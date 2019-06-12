@@ -22,8 +22,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        itemCardIsDisplayed: state.addItem.isDisplayed,
-        basketIsOpened: state.basket.isDisplayed
+        itemCardIsDisplayed: state.addItem.present.isDisplayed,
+        basketIsOpened: state.basket.present.isDisplayed
     }
 };
 

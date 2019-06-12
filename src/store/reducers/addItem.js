@@ -1,7 +1,8 @@
-import {actions, promo} from "../constants";
+import {actions, promo} from '../constants';
+import undoable, { distinctState } from 'redux-undo';
 
 
-export default (state={}, action) => {
+const itemCard = (state={}, action) => {
     switch (action.type) {
         case actions.ADD_ITEM:
             return {
@@ -52,4 +53,10 @@ export default (state={}, action) => {
         default:
             return state;
     }
-}
+};
+
+const undoableItemCard = undoable(itemCard, {
+    filter: distinctState()
+});
+
+export default undoableItemCard;

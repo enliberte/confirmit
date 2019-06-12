@@ -6,7 +6,7 @@ import {actions} from '../store/constants';
 class ItemCard extends Component {
     render() {
         return (
-            <div className="modal-dialog fixed-top modal-dialog-scrollable" role="document">
+            <div className="modal-dialog fixed-top mt-5 modal-dialog-scrollable" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">{this.props.item.data.name}</h5>
@@ -96,10 +96,10 @@ class ItemCard extends Component {
 const mapStateToProps = (state) => {
     return {
         item: {
-            data: state.addItem.itemData,
-            count: state.addItem.count,
-            discount: state.addItem.discount,
-            promo: state.addItem.promo
+            data: state.addItem.present.itemData,
+            count: state.addItem.present.count,
+            discount: state.addItem.present.discount,
+            promo: state.addItem.present.promo
         }
     }
 };

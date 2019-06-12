@@ -1,8 +1,9 @@
-import {actions, promo} from "../constants";
-import {v4} from 'uuid'
+import {actions, promo} from '../constants';
+import {v4} from 'uuid';
+import undoable, { distinctState } from 'redux-undo';
 
 
-export default (state={}, action) => {
+const basket = (state={}, action) => {
     switch (action.type) {
         case actions.MOVE_TO_BASKET:
             action.payload.purchaseId = v4();
@@ -182,4 +183,10 @@ export default (state={}, action) => {
         default:
             return state;
     }
-}
+};
+
+const undoableBasket = undoable(basket, {
+    filter: distinctState()
+});
+
+export default undoableBasket;

@@ -7,7 +7,7 @@ import BasketItem from "./basketItem";
 class Basket extends Component {
     render() {
         return (
-            <div className="modal-dialog fixed-top modal-dialog-scrollable modal-xl" role="document">
+            <div className="modal-dialog fixed-top mt-5 modal-dialog-scrollable modal-xl" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">Корзина</h5>
@@ -64,10 +64,10 @@ class Basket extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        promo: state.basket.promo,
-        discount: state.basket.discount,
-        items: state.basket.items,
-        total: state.basket.items.reduce(
+        promo: state.basket.present.promo,
+        discount: state.basket.present.discount,
+        items: state.basket.present.items,
+        total: state.basket.present.items.reduce(
             (total, item) => total + item.count * item.data.price * (100 - item.discount) / 100
         , 0)
     }
