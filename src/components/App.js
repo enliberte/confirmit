@@ -1,24 +1,31 @@
 import React, {Component} from 'react';
 import Toolbar from './toolbar';
 import ItemsList from './itemsList';
-// import Basket from './basket';
-import {Router, Route, Link} from 'react-router-dom';
-import {createBrowserHistory} from 'history';
+import ItemCard from './itemCard';
+import Basket from './basket';
+import {connect} from 'react-redux';
 
 
-const history = createBrowserHistory();
-
-
-export default class App extends Component {
+class App extends Component {
     render() {
         return (
-            <Router history={history}>
-                <div className="container">
-                    <Toolbar />
-                    {/*<Route path="/basket" component={Basket}/>*/}
-                    <ItemsList />
-                </div>
-            </Router>
+            <div className="container">
+                <Toolbar />
+                <ItemsList />
+                {this.props.itemCardIsDisplayed && <ItemCard />}
+                {this.props.basketIsOpened && <Basket />}
+            </div>
         );
     }
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+        itemCardIsDisplayed: state.addItem.isDisplayed,
+        basketIsOpened: state.basket.isDisplayed
+    }
+};
+
+
+export default connect(mapStateToProps)(App);

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {actions} from '../store/constants';
 
 
 class Toolbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-dark bg-dark">
-                <Link to="/" style={{color: 'white'}}>Главная</Link>
                 <div className="btn-group">
                     <button
                         type="button"
@@ -18,18 +18,28 @@ class Toolbar extends Component {
                         className="btn btn-dark">
                         Вперед
                     </button>
-                    <Link to="/basket">
-                        <button
-                            type="button"
-                            className="btn btn-dark">
-                            Корзина
-                        </button>
-                    </Link>
                 </div>
+                <button
+                    onClick={this.props.onOpenBasket}
+                    type="button"
+                    className="btn btn-success float-right">
+                    Корзина
+                </button>
             </nav>
         )
     }
 }
 
 
-export default Toolbar;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onOpenBasket() {
+            dispatch({
+               type: actions.OPEN_BASKET
+            });
+        }
+    }
+};
+
+
+export default connect(null, mapDispatchToProps)(Toolbar);

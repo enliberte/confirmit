@@ -1,21 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {actions} from '../store/constants';
 
 
 class Item extends Component {
     render() {
         return (
-            <div className="col-md-4">
-                <div className="card mt-3">
-                    <div className="card-header">
-                        {this.props.item.name}
-                        <button type="button" className="btn btn-success float-right">+</button>
-                    </div>
-                    <img src={this.props.item.url}/>
-                    <div className="card-block">
-                        <p className="card-text">{this.props.item.description}</p>
-                    </div>
-                </div>
+            <div
+                className="card text-center mt-3 p-3"
+                style={{cursor: 'pointer'}}
+                onClick={() => this.props.onAddItem(this.props.item)}>
+                <div className="card-header">{this.props.item.name}</div>
+                <img className="card-img-bottom" src={this.props.item.url}/>
+                <div className="card-footer">{this.props.item.price} р.</div>
             </div>
         )
     }
@@ -24,7 +21,12 @@ class Item extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        onAddItem(itemData) {
+            dispatch({
+                type: actions.ADD_ITEM,
+                payload: itemData
+            });
+        }
     }
 };
 
