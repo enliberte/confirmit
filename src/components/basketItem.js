@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {actions} from '../store/constants';
+import CouponInp from './platform/couponInp';
+import CountInp from './platform/countInp';
+import DecrementBtn from './platform/decrementBtn';
+import IncrementBtn from './platform/incrementBtn';
+import ApplyCouponBtn from './platform/applyCouponBtn';
+import DeletePurchaseBtn from './platform/deletePurchaseBtn';
+import DeleteCouponBtn from './platform/deleteCouponBtn';
 
 
 class BasketItem extends Component {
@@ -10,12 +17,7 @@ class BasketItem extends Component {
                 <div className="row no-gutters">
                     <div className="col-md-4">
                         <img src={this.props.item.data.url} className="card-img p-3"/>
-                        <button
-                            onClick={() => this.props.onDeleteItem(this.props.item.purchaseId)}
-                            type="button"
-                            className="btn btn-danger btn-block ml-3 mr-auto">
-                            Удалить
-                        </button>
+                        <DeletePurchaseBtn purchaseId={this.props.item.purchaseId}/>
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
@@ -24,53 +26,33 @@ class BasketItem extends Component {
                                 {this.props.item.discount === 0 &&
                                 <li className="list-group-item">
                                     <div className="btn-group w-100">
-                                        <input
-                                            required
-                                            className="form-control"
-                                            placeholder="Введите купон"
-                                            value={this.props.item.promo}
-                                            onChange={() => this.props.onEnterPromo(this.props.item.purchaseId)}/>
-                                        <button
-                                            onClick={() => this.props.onApplyPromo(this.props.item.purchaseId)}
-                                            type="button"
-                                            className="btn btn-success">
-                                            Применить
-                                        </button>
+                                        <CouponInp
+                                            promo={this.props.item.promo}
+                                            onEnterPromo={() => this.props.onApplyPromo(this.props.item.purchaseId)}
+                                        />
+                                        <ApplyCouponBtn onApplyPromo={this.props.onApplyPromo}/>
                                     </div>
                                 </li>}
                                 {this.props.item.discount > 0 &&
                                 <li className="list-group-item">
                                     Скидка {this.props.item.discount}% по купону "{this.props.item.promo}"
-                                    <button
-                                        onClick={() => this.props.onDeletePromo(this.props.item.purchaseId)}
-                                        type="button"
-                                        className="btn btn-danger float-right"
-                                        style={{maxWidth: '2em'}}>
-                                        x
-                                    </button>
+                                    <DeleteCouponBtn
+                                        onDeletePromo={() => this.props.onDeletePromo(this.props.item.purchaseId)}
+                                    />
                                 </li>}
                                 <li className="list-group-item">
                                     Цена: {this.props.item.data.price * (100 - this.props.item.discount) / 100} р.
                                     <div className="btn-group float-right">
-                                        <button
-                                            onClick={() => this.props.onDecrement(this.props.item.purchaseId)}
-                                            type="button"
-                                            className="btn btn-success ml-auto"
-                                            style={{maxWidth: '2em'}}>
-                                            -
-                                        </button>
-                                        <input
-                                            required
-                                            className="form-control w-25"
-                                            value={this.props.item.count}
-                                            onChange={() => this.props.onSetCount(this.props.item.purchaseId)}/>
-                                        <button
-                                            onClick={() => this.props.onIncrement(this.props.item.purchaseId)}
-                                            type="button"
-                                            className="btn btn-success"
-                                            style={{maxWidth: '2em'}}>
-                                            +
-                                        </button>
+                                        <DecrementBtn
+                                            onDecrement={() => this.props.onDecrement(this.props.item.purchaseId)}
+                                        />
+                                        <CountInp
+                                            count={this.props.item.count}
+                                            onSetCount={() => this.props.onSetCount(this.props.item.purchaseId)}
+                                        />
+                                        <IncrementBtn
+                                            onIncrement={() => this.props.onIncrement(this.props.item.purchaseId)}
+                                        />
                                     </div>
                                 </li>
                                 <li className="list-group-item text-right">
@@ -123,18 +105,9 @@ const mapDispatchToProps = (dispatch) => {
                 type: actions.DELETE_PROMO_IN_BASKET,
                 payload: id
             })
-        },
-        onDeleteItem(id) {
-            dispatch({
-                type: actions.DELETE_ITEM,
-                payload: id
-            })
         }
     }
 };
 
 
 export default connect(null, mapDispatchToProps)(BasketItem);
-
-
-

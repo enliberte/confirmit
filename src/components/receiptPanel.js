@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {actions} from '../store/constants';
 import ReceiptTable from './receiptTable';
+import CloseBtn from './platform/closeBtn';
+import PrintBtn from './platform/printBtn';
 
 
 class ReceiptPanel extends Component {
@@ -12,18 +14,8 @@ class ReceiptPanel extends Component {
                     <div className="modal-header">
                         <h5 className="modal-title">Чек</h5>
                         <div className="btn-group">
-                            <button
-                                onClick={onPrint}
-                                type="button"
-                                className="btn btn-light">
-                                <img src="../src/img/icons/print.png" style={{width: '1em'}} alt="Чек"/>
-                            </button>
-                            <button
-                                onClick={this.props.onClose}
-                                type="button"
-                                className="btn btn-light">
-                                <img src="../src/img/icons/close.png" style={{width: '1em'}} alt="Закрыть"/>
-                            </button>
+                            <PrintBtn />
+                            <CloseBtn onClose={this.props.onClose}/>
                         </div>
                     </div>
                     <div className="modal-body">
@@ -34,19 +26,6 @@ class ReceiptPanel extends Component {
         )
     }
 }
-
-
-const onPrint = () => {
-    let receiptIframe = document.createElement('iframe');
-    receiptIframe.width = 0;
-    receiptIframe.height = 0;
-    document.body.appendChild(receiptIframe);
-    receiptIframe.contentWindow.document.body.innerHTML = document.querySelector('style').outerHTML;
-    receiptIframe.contentWindow.document.body.innerHTML += '<style>@page { size: auto;  margin: 3mm; }</style>';
-    receiptIframe.contentWindow.document.body.innerHTML += document.querySelector('.receipt').outerHTML;
-    receiptIframe.contentWindow.print();
-    document.body.removeChild(receiptIframe);
-};
 
 
 const mapDispatchToProps = (dispatch) => {

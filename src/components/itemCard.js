@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {actions} from '../store/constants';
+import CloseBtn from './platform/closeBtn';
+import CouponInp from './platform/couponInp';
+import CountInp from './platform/countInp';
+import DecrementBtn from './platform/decrementBtn';
+import IncrementBtn from './platform/incrementBtn';
+import ApplyCouponBtn from './platform/applyCouponBtn';
+import DeleteCouponBtn from './platform/deleteCouponBtn';
+import MoveToBasketBtn from './platform/moveToBasketBtn';
 
 
 class ItemCard extends Component {
@@ -10,12 +18,7 @@ class ItemCard extends Component {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">{this.props.item.data.name}</h5>
-                        <button
-                            onClick={this.props.onClose}
-                            type="button"
-                            className="btn btn-light">
-                            <img src="../src/img/icons/close.png" style={{width: '1em'}} alt="Закрыть"/>
-                        </button>
+                        <CloseBtn onClose={this.props.onClose}/>
                     </div>
                     <div className="modal-body">
                         <div className="card text-center">
@@ -23,56 +26,22 @@ class ItemCard extends Component {
                             <ul className="list-group list-group-flush">
                                 {this.props.item.discount === 0 &&
                                 <li className="list-group-item">
-                                    <div className="btn-group">
-                                        <input
-                                            required
-                                            className="form-control"
-                                            placeholder="Введите купон"
-                                            value={this.props.item.promo}
-                                            onChange={this.props.onEnterPromo}/>
-                                        <button
-                                            onClick={this.props.onApplyPromo}
-                                            type="button"
-                                            className="btn btn-success">
-                                            Применить
-                                        </button>
+                                    <div className="btn-group btn-block">
+                                        <CouponInp promo={this.props.item.promo} onEnterPromo={this.props.onEnterPromo}/>
+                                        <ApplyCouponBtn onApplyPromo={this.props.onApplyPromo}/>
                                     </div>
                                 </li>}
                                 {this.props.item.discount > 0 &&
                                 <li className="list-group-item">
                                     Скидка {this.props.item.discount}% по купону "{this.props.item.promo}"
-                                    <button
-                                        onClick={this.props.onDeletePromo}
-                                        type="button"
-                                        className="btn btn-danger float-right"
-                                        style={{maxWidth: '2em'}}>
-                                        x
-                                    </button>
+                                    <DeleteCouponBtn onDeletePromo={this.props.onDeletePromo}/>
                                 </li>}
                                 <li className="list-group-item">
-                                    Цена: {this.props.item.data.price * (100 - this.props.item.discount) / 100} р.
-                                </li>
-                                <li className="list-group-item">
                                     <div className="btn-group">
-                                        <button
-                                            onClick={this.props.onDecrement}
-                                            type="button"
-                                            className="btn btn-success ml-auto"
-                                            style={{maxWidth: '2em'}}>
-                                            -
-                                        </button>
-                                        <input
-                                            required
-                                            className="form-control w-25"
-                                            value={this.props.item.count}
-                                            onChange={this.props.onSetCount}/>
-                                        <button
-                                            onClick={this.props.onIncrement}
-                                            type="button"
-                                            className="btn btn-success mr-auto"
-                                            style={{maxWidth: '2em'}}>
-                                            +
-                                        </button>
+                                        Цена: {this.props.item.data.price * (100 - this.props.item.discount) / 100} р.
+                                        <DecrementBtn onDecrement={this.props.onDecrement}/>
+                                        <CountInp count={this.props.item.count} onSetCount={this.props.onSetCount}/>
+                                        <IncrementBtn onIncrement={this.props.onIncrement}/>
                                     </div>
                                 </li>
                                 <li className="list-group-item">
@@ -80,12 +49,7 @@ class ItemCard extends Component {
                                 </li>
                             </ul>
                         </div>
-                        <button
-                            onClick={() => this.props.onMoveToBasket(this.props.item)}
-                            type="button"
-                            className="btn btn-success btn-block mt-3">
-                            Добавить в корзину
-                        </button>
+                        <MoveToBasketBtn item={this.props.item}/>
                     </div>
                 </div>
             </div>
@@ -108,12 +72,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAddItem(itemData) {
-            dispatch({
-                type: actions.ADD_ITEM,
-                payload: itemData
-            });
-        },
         onClose() {
             dispatch({
                 type: actions.CLOSE_ITEM_CARD
@@ -151,15 +109,6 @@ const mapDispatchToProps = (dispatch) => {
                 type: actions.DELETE_PROMO
             })
         },
-        onMoveToBasket(item) {
-            dispatch({
-                type: actions.MOVE_TO_BASKET,
-                payload: item
-            });
-            dispatch({
-                type: actions.CLOSE_ITEM_CARD
-            });
-        }
     }
 };
 

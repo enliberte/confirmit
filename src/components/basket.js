@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {actions} from '../store/constants';
-import BasketItem from "./basketItem";
+import BasketItem from './basketItem';
+import CloseBtn from './platform/closeBtn';
+import ReceiptBtn from './platform/receiptBtn';
+import CouponInp from './platform/couponInp';
+import ApplyCouponBtn from './platform/applyCouponBtn';
+import DeleteCouponBtn from './platform/deleteCouponBtn';
 
 
 class Basket extends Component {
@@ -12,19 +17,8 @@ class Basket extends Component {
                     <div className="modal-header">
                         <h5 className="modal-title">Корзина</h5>
                         <div className="btn-group">
-                            {this.props.items.length > 0 &&
-                            <button
-                                onClick={this.props.onOpenReceipt}
-                                type="button"
-                                className="btn btn-light">
-                                <img src="../src/img/icons/document.png" style={{width: '1em'}} alt="Чек"/>
-                            </button>}
-                            <button
-                                onClick={this.props.onClose}
-                                type="button"
-                                className="btn btn-light">
-                                <img src="../src/img/icons/close.png" style={{width: '1em'}} alt="Закрыть"/>
-                            </button>
+                            {this.props.items.length > 0 && <ReceiptBtn />}
+                            <CloseBtn onClose={this.props.onClose}/>
                         </div>
                     </div>
                     <div className="modal-body">
@@ -38,30 +32,14 @@ class Basket extends Component {
                         {this.props.discount === 0 &&
                         <li className="list-group-item mr-auto">
                             <div className="btn-group mr-auto">
-                                <input
-                                    required
-                                    className="form-control"
-                                    placeholder="Введите купон"
-                                    value={this.props.promo}
-                                    onChange={this.props.onEnterPromo}/>
-                                <button
-                                    onClick={this.props.onApplyPromo}
-                                    type="button"
-                                    className="btn btn-success">
-                                    Применить
-                                </button>
+                                <CouponInp promo={this.props.promo} onEnterPromo={this.props.onEnterPromo}/>
+                                <ApplyCouponBtn onApplyPromo={this.props.onApplyPromo} />
                             </div>
                         </li>}
                         {this.props.discount > 0 &&
                         <li className="list-group-item mr-auto">
                             Скидка {this.props.discount}% по купону "{this.props.promo}"
-                            <button
-                                onClick={this.props.onDeletePromo}
-                                type="button"
-                                className="btn btn-danger ml-5"
-                                style={{maxWidth: '2em'}}>
-                                x
-                            </button>
+                            <DeleteCouponBtn onDeletePromo={this.props.onDeletePromo}/>
                         </li>}
                         <p>Итого: {this.props.total} р.</p>
                     </div>}
@@ -105,11 +83,6 @@ const mapDispatchToProps = (dispatch) => {
         onDeletePromo() {
             dispatch({
                 type: actions.DELETE_PROMO_ALL
-            });
-        },
-        onOpenReceipt() {
-            dispatch({
-                type: actions.OPEN_RECEIPT
             });
         },
     }

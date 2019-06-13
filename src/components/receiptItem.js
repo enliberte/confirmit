@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {actions} from '../store/constants';
 
 
 export default class ReceiptItem extends Component {
