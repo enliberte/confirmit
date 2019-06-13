@@ -26,7 +26,7 @@ class Receipt extends Component {
                         </div>
                     </div>
                     <div className="modal-body">
-                        <iframe src="#" frameborder="0">
+                        <iframe src="" frameborder="0">
                             <table className="table">
                                 <thead className="thead-light">
                                 <tr>
@@ -87,7 +87,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onClose() {
             dispatch({
-                type: actions.CLOSE_BASKET
+                type: actions.CLOSE_RECEIPT
             });
         }
     }
