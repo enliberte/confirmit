@@ -12,8 +12,9 @@ class ItemCard extends Component {
                         <h5 className="modal-title">{this.props.item.data.name}</h5>
                         <button
                             onClick={this.props.onClose}
-                            type="button" className="close">
-                            <span aria-hidden="true">&times;</span>
+                            type="button"
+                            className="btn btn-light">
+                            <img src="../src/img/icons/close.png" style={{width: '1em'}} alt="Закрыть"/>
                         </button>
                     </div>
                     <div className="modal-body">

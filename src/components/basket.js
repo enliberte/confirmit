@@ -21,8 +21,9 @@ class Basket extends Component {
                             </button>}
                             <button
                                 onClick={this.props.onClose}
-                                type="button" className="close">
-                                <span aria-hidden="true">&times;</span>
+                                type="button"
+                                className="btn btn-light">
+                                <img src="../src/img/icons/close.png" style={{width: '1em'}} alt="Закрыть"/>
                             </button>
                         </div>
                     </div>

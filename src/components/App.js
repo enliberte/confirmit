@@ -3,7 +3,7 @@ import Toolbar from './toolbar';
 import ItemsList from './itemsList';
 import ItemCard from './itemCard';
 import Basket from './basket';
-import Receipt from './receipt';
+import Receipt from './receiptPanel';
 import {connect} from 'react-redux';
 
 

@@ -26,7 +26,7 @@ class Toolbar extends Component {
                     onClick={this.props.onOpenBasket}
                     type="button"
                     className="btn btn-success float-right">
-                    Корзина
+                    <img src="../src/img/icons/cart.png" style={{width: '1em'}} alt="Корзина"/>
                 </button>
             </nav>
         )
