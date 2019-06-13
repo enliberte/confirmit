@@ -20,6 +20,8 @@ export const actions = {
     ENTER_PROMO_ALL: 'ENTER_PROMO_ALL',
     APPLY_PROMO_ALL: 'APPLY_PROMO_ALL',
     DELETE_PROMO_ALL: 'DELETE_PROMO_ALL',
+    OPEN_RECEIPT: 'OPEN_RECEIPT',
+    CLOSE_RECEIPT: 'CLOSE_RECEIPT'
 };
 
 export const promo = {

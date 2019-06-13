@@ -20,7 +20,6 @@ class BasketItem extends Component {
                     <div className="col-md-8">
                         <div className="card-body">
                             <h5 className="card-title">{this.props.item.data.name}</h5>
-
                             <ul className="list-group list-group-flush">
                                 {this.props.item.discount === 0 &&
                                 <li className="list-group-item">

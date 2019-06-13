@@ -52,6 +52,13 @@ const initialState = {
             items: []
         },
         future: []
+    },
+    receipt: {
+        past: [],
+        present: {
+            isDisplayed: false
+        },
+        future: []
     }
 };
 

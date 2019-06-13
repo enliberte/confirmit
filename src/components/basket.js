@@ -11,11 +11,20 @@ class Basket extends Component {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">Корзина</h5>
-                        <button
-                            onClick={this.props.onClose}
-                            type="button" className="close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <div className="btn-group">
+                            {this.props.items.length > 0 &&
+                            <button
+                                onClick={this.props.onOpenReceipt}
+                                type="button"
+                                className="btn btn-light">
+                                <img src="../src/img/icons/document.png" style={{width: '1em'}} alt="Чек"/>
+                            </button>}
+                            <button
+                                onClick={this.props.onClose}
+                                type="button" className="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </div>
                     <div className="modal-body">
                         {this.props.items.length > 0 && this.props.items.map(
@@ -96,7 +105,12 @@ const mapDispatchToProps = (dispatch) => {
             dispatch({
                 type: actions.DELETE_PROMO_ALL
             });
-        }
+        },
+        onOpenReceipt() {
+            dispatch({
+                type: actions.OPEN_RECEIPT
+            });
+        },
     }
 };
 
