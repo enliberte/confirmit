@@ -10,7 +10,7 @@ class BasketBtn extends Component {
                 onClick={this.props.onOpenBasket}
                 type="button"
                 className="btn btn-success float-right">
-                <img src="../src/img/icons/cart.png" style={{width: '1em'}} alt="Корзина"/>
+                <img src="../src/img/icons/cart.png" style={{width: '1em', filter: 'invert(100%)'}} alt="Корзина"/>
             </button>
         )
     }

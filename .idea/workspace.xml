@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a63cbac-6148-4a9a-b61e-93c9a1615983" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/basket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/basket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/basketItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/basketItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/itemCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/itemCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/receiptItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/receiptItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/receiptPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/receiptPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/receiptTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/receiptTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/toolbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/toolbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/platform/incrementBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/platform/incrementBtn.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -80,20 +69,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/platform/incrementBtn.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/itemCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="38" column="77" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
+            <state relative-caret-position="-974">
+              <caret line="25" column="72" lean-forward="true" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -177,13 +166,13 @@
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/package-lock.json" />
-        <option value="$PROJECT_DIR$/src/components/platform/incrementBtn.js" />
         <option value="$PROJECT_DIR$/src/components/platform/decrementBtn.js" />
         <option value="$PROJECT_DIR$/src/components/platform/couponInp.js" />
         <option value="$PROJECT_DIR$/src/components/basketItem.js" />
         <option value="$PROJECT_DIR$/src/components/platform/countInp.js" />
         <option value="$PROJECT_DIR$/src/components/platform/applyCouponBtn.js" />
         <option value="$PROJECT_DIR$/src/components/itemCard.js" />
+        <option value="$PROJECT_DIR$/src/components/platform/incrementBtn.js" />
       </list>
     </option>
   </component>
@@ -283,12 +272,12 @@
       <option name="presentableId" value="Default" />
       <updated>1560259901359</updated>
       <workItem from="1560259902576" duration="17582000" />
-      <workItem from="1560452258982" duration="9385000" />
+      <workItem from="1560452258982" duration="9601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62925000" />
+    <option name="totallyTimeSpent" value="63141000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1366" height="693" extended-state="0" />
@@ -565,13 +554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/platform/incrementBtn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/platform/decrementBtn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -629,11 +611,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/itemCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="38" column="77" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
+        <state relative-caret-position="-974">
+          <caret line="25" column="72" lean-forward="true" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/platform/incrementBtn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
         </state>
       </provider>
     </entry>
