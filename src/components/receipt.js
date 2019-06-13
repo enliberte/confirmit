@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {actions} from '../store/constants';
-import BasketItem from "./basketItem";
 
 
 class Receipt extends Component {
@@ -69,8 +68,9 @@ const onPrint = () => {
     receiptIframe.width = 0;
     receiptIframe.height = 0;
     document.body.appendChild(receiptIframe);
-    receiptIframe.contentWindow.document.body.innerHTML = document.querySelector('.receipt').innerHTML;
-    document.querySelector('iframe').contentWindow.print();
+    receiptIframe.contentWindow.document.body.innerHTML = document.querySelector('style').outerHTML;
+    receiptIframe.contentWindow.document.body.innerHTML += document.querySelector('.receipt').innerHTML;
+    receiptIframe.contentWindow.print();
     document.body.removeChild(receiptIframe);
 };
 
