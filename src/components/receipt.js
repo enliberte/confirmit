@@ -25,8 +25,8 @@ class Receipt extends Component {
                             </button>
                         </div>
                     </div>
-                    <div className="modal-body">
-                        <table className="table receipt">
+                    <div className="modal-body receipt">
+                        <table className="table">
                             <thead className="thead-light">
                             <tr>
                                 <th scope="col">#</th>
@@ -65,7 +65,13 @@ class Receipt extends Component {
 
 
 const onPrint = () => {
-    window.print();
+    let receiptIframe = document.createElement('iframe');
+    receiptIframe.width = 0;
+    receiptIframe.height = 0;
+    document.body.appendChild(receiptIframe);
+    receiptIframe.contentWindow.document.body.innerHTML = document.querySelector('.receipt').innerHTML;
+    document.querySelector('iframe').contentWindow.print();
+    document.body.removeChild(receiptIframe);
 };
 
 
