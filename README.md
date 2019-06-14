@@ -19,4 +19,4 @@ NB:
 How to run?
 1) Clone repository (git clone https://github.com/enliberte/confirmit.git);
 2) Go to project folder and install dependencies (npm install);
-3) Run web-server (npm start);
+3) Run web-server (npm run dev);
