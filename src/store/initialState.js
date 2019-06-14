@@ -6,21 +6,21 @@ const initialState = {
                 id: 1,
                 name: "Jaguar XE",
                 description: "Автомобиль для тех, кто знает себе цену",
-                url: "../src/img/items/jaguar.jpeg",
+                url: "/src/img/items/jaguar.jpeg",
                 price: 5000000
             },
             {
                 id: 2,
                 name: "BMW X1",
                 description: "Бумер крут, даже если не черный",
-                url: "../src/img/items/bmw.jpeg",
+                url: "/src/img/items/bmw.jpeg",
                 price: 3000000
             },
             {
                 id: 3,
                 name: "Volvo S60",
                 description: "Ваш выбор, если любите надежность",
-                url: "../src/img/items/volvo.jpeg",
+                url: "/src/img/items/volvo.jpeg",
                 price: 2500000
             }
         ],

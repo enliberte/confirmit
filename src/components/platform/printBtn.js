@@ -21,7 +21,7 @@ export default class PrintBtn extends Component {
                 onClick={onPrint}
                 type="button"
                 className="btn btn-light">
-                <img src="../src/img/icons/print.png" style={{width: '1em'}} alt="Чек"/>
+                <img src="/src/img/icons/print.png" style={{width: '1em'}} alt="Чек"/>
             </button>
         )
     }

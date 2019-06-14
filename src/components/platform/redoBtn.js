@@ -10,7 +10,7 @@ class RedoBtn extends Component {
                 onClick={this.props.onRedo}
                 type="button"
                 className="btn btn-outline-success">
-                <img src="../src/img/icons/redo.png" style={{width: '1em', filter: 'invert(100%)'}} alt="Вперед"/>
+                <img src="/src/img/icons/redo.png" style={{width: '1em', filter: 'invert(100%)'}} alt="Вперед"/>
             </button>
         )
     }

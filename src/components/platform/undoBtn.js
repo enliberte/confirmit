@@ -10,7 +10,7 @@ class UndoBtn extends Component {
                 onClick={this.props.onUndo}
                 type="button"
                 className="btn btn-outline-success">
-                <img src="../src/img/icons/undo.png" style={{width: '1em', filter: 'invert(100%)'}} alt="Назад"/>
+                <img src="/src/img/icons/undo.png" style={{width: '1em', filter: 'invert(100%)'}} alt="Назад"/>
             </button>
         )
     }

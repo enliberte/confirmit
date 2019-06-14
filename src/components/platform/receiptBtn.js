@@ -10,7 +10,7 @@ class ReceiptBtn extends Component {
                 onClick={this.props.onOpenReceipt}
                 type="button"
                 className="btn btn-light">
-                <img src="../src/img/icons/document.png" style={{width: '1em'}} alt="Чек"/>
+                <img src="/src/img/icons/document.png" style={{width: '1em'}} alt="Чек"/>
             </button>
         )
     }
