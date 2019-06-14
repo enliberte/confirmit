@@ -31,7 +31,7 @@ const itemCard = (state={}, action) => {
         case actions.SET_COUNT_IN_CARD:
             return {
                 ...state,
-                count: +action.payload
+                count: isNaN(action.payload) || +action.payload < 1 ? 1: +action.payload
             };
         case actions.ENTER_PROMO:
             return {

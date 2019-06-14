@@ -72,7 +72,7 @@ const basket = (state={}, action) => {
                 items: state.items.map(
                     item => {
                         if (item.purchaseId === action.payload.id) {
-                            return {...item, count: action.payload.value}
+                            return {...item, count: isNaN(action.payload.value) || +action.payload.value < 1 ? 1: +action.payload.value}
                         }
                         return item;
                     }
