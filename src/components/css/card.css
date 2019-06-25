@@ -16,14 +16,14 @@
 }
 
 .card__header {
-    background-color: #77808C;
+    background: linear-gradient(to bottom, #313438, #77808C);
     display: flex;
     justify-content: space-between;
 }
 
 .card__footer {
     padding: 0 10px;
-    background-color: #77808C;
+    background: linear-gradient(to top, #313438, #77808C);
     display: flex;
     justify-content: space-between;
 }

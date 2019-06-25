@@ -11,7 +11,10 @@ class Item extends Component {
                 className="item_row"
                 onClick={() => this.props.onAddItem(this.props.item)}>
                 <div className="item_header">{this.props.item.name}</div>
-                <img src={this.props.item.url}/>
+                <div className="item__img">
+                    <img src={this.props.item.url}/>
+                    <div className="item__desc">{this.props.item.description}</div>
+                </div>
                 <div className="item_footer">{this.props.item.price} р.</div>
             </div>
         )

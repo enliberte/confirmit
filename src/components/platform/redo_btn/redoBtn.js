@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {ActionCreators as UndoActionCreators} from 'redux-undo';
-import './redoBtn.module.css';
 
 
 class RedoBtn extends Component {

@@ -34,7 +34,9 @@ class Basket extends Component {
                         onApplyPromo={this.props.onApplyPromo}
                         onDeletePromo={this.props.onDeletePromo}
                     />}
-                    {this.props.items.length > 0 && <span className="card__total">Итого: {this.props.total} р.</span>}
+                    {this.props.items.length > 0 && <span className="card__total white">
+                        Итого: {this.props.total} р.
+                    </span>}
                 </div>
             </div>
         )

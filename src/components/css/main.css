@@ -1,9 +1,13 @@
-@import "button.css";
 @import "card.css";
 
 
 * {
     box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
 .groupLeft {
@@ -14,4 +18,8 @@
 .groupRight {
     margin-left: 0;
     border-radius: 0 5px 5px 0;
+}
+
+.white {
+    color: white;
 }
