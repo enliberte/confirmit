@@ -28,7 +28,7 @@ class BasketItem extends Component {
                                     <div className="btn-group w-100">
                                         <CouponInp
                                             promo={this.props.item.promo}
-                                            onEnterPromo={() => this.props.onApplyPromo(this.props.item.purchaseId)}
+                                            onEnterPromo={() => this.props.onEnterPromo(this.props.item.purchaseId)}
                                         />
                                         <ApplyCouponBtn onApplyPromo={this.props.onApplyPromo}/>
                                     </div>
