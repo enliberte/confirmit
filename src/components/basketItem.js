@@ -30,7 +30,7 @@ class BasketItem extends Component {
                                             promo={this.props.item.promo}
                                             onEnterPromo={() => this.props.onEnterPromo(this.props.item.purchaseId)}
                                         />
-                                        <ApplyCouponBtn onApplyPromo={this.props.onApplyPromo}/>
+                                        <ApplyCouponBtn onApplyPromo={() => this.props.onApplyPromo(this.props.item.purchaseId)}/>
                                     </div>
                                 </li>}
                                 {this.props.item.discount > 0 &&
