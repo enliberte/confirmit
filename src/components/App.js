@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import Toolbar from './toolbar';
-import ItemsList from './itemsList';
-import ItemCard from './itemCard';
-import Basket from './basket';
-import Receipt from './receiptPanel';
+import Toolbar from './toolbar/toolbar';
+import ItemsList from './items_list/itemsList';
+import ItemCard from './item_card/itemCard';
+import Basket from './basket/basket';
+import Receipt from './receipt_panel/receiptPanel';
 import {connect} from 'react-redux';
+import './css/main.css';
 
 
 class App extends Component {

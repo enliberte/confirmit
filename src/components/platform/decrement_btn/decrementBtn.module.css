@@ -1,0 +1,15 @@
+.decrement__btn {
+    max-width: 4em;
+    padding: 10px;
+    flex: 1 1 4em;
+    background-color: #B3B3B3;
+    border: 1px solid #151617;
+    border-right: none;
+    transition: all 0.5s;
+    font-weight: bold;
+}
+
+.decrement__btn:hover {
+    background-color: #151617;
+    color: white;
+}

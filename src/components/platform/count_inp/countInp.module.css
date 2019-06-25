@@ -1,0 +1,17 @@
+.count__inp {
+    padding: 10px;
+    max-width: 5em;
+    flex: 1 1 5em;
+    text-align: center;
+    border: 1px solid #151617;
+    background-color: #DCDCDC;
+    transition: all 0.5s;
+}
+
+.count__inp:hover {
+    opacity: 0.7;
+}
+
+.count__inp:focus {
+    background-color: white;
+}

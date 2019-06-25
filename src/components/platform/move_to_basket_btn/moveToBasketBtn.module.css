@@ -1,0 +1,15 @@
+.move_to_basket__btn {
+    padding: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: #B3B3B3;
+    border: 1px solid #151617;
+    transition: all 0.5s;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.move_to_basket__btn:hover {
+    background-color: #151617;
+    color: white;
+}

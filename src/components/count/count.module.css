@@ -1,0 +1,5 @@
+.count {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: auto;
+}

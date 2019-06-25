@@ -1,0 +1,17 @@
+@import "button.css";
+@import "card.css";
+
+
+* {
+    box-sizing: border-box;
+}
+
+.groupLeft {
+    margin-right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.groupRight {
+    margin-left: 0;
+    border-radius: 0 5px 5px 0;
+}

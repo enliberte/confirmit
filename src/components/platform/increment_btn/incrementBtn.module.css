@@ -1,0 +1,15 @@
+.increment__btn {
+    max-width: 4em;
+    padding: 10px;
+    flex: 1 1 4em;
+    font-weight: bold;
+    background-color: #B3B3B3;
+    border: 1px solid #151617;
+    border-left: none;
+    transition: all 0.5s;
+}
+
+.increment__btn:hover {
+    background-color: #151617;
+    color: white;
+}

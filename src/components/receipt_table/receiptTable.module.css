@@ -1,0 +1,10 @@
+.receipt__table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+.receipt__table td, .receipt__table th {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}

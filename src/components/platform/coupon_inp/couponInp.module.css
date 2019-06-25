@@ -1,0 +1,17 @@
+.coupon__inp {
+    flex: 1 1 7em;
+    text-align: center;
+    padding: 10px;
+    background-color: #DCDCDC;
+    border: 1px solid #151617;
+    border-right: none;
+    transition: all 0.5s;
+}
+
+.coupon__inp:hover {
+    opacity: 0.7;
+}
+
+.coupon__inp:focus {
+    background-color: white;
+}
